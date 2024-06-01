@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Content</title>
+
+    <style>
+        @font-face {
+            font-family: 'SalisburyBold';
+            src: url('SalisburyBold-PVZXr.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Jersey20Regular';
+            src: url('Jersey20-Regular.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: rgb(109, 135, 156);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -95px;
+        }
+
+        header ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            padding: 6px 15px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 20px;
+            background-color: #9dc2de;
+        }
+
+        header ul li a:hover,
+        header ul li a.active {
+            background: #fff;
+            color: #2b1055;
+        }
+    .video-container {
+        display: flex;
+        gap: 20px; 
+        justify-content: center; 
+    }
+
+    .video-container iframe {
+        border-radius: 15px; 
+    }
+        .content-section {
+            padding: 100px;
+            background: rgba(9, 75, 101, 0.8);
+            margin: 100px auto;
+            border-radius: 15px;
+            width: 90%;
+            text-align: center;
+            flex: 1;
+        }
+
+        .content-section h2 {
+            font-size: 3.6em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 1.5em;
+            color: lightblue;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery-theme {
+            margin-bottom: 35px;
+        }
+
+        .gallery-theme h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .gallery-theme .gallery-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-theme .gallery-row img {
+            width: 90%;
+            height: auto;
+            max-width: 300px;
+            margin: 0 10px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-theme .gallery-row img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .audio-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .audio-section audio {
+            width: 60%;
+            margin: 20px 0;
+        }
+
+        .audio-section h3 {
+            color: #fff;
+        }
+
+        .audio-section p {
+            font-size: 1em;
+            color: black;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .Stage-Effects-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .Stage-Effects-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .Stage-Effects-section p {
+            font-size: 1.3em;
+            color: lightblue;
+            margin-bottom: 20px;
+        }
+
+        .gallery2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery2 img {
+            width: 90%;
+            height: auto;
+            max-width: 300px;
+            margin: 0 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery2 img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .gallery3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery3 img {
+            width: 90%;
+            height: auto;
+            max-width: 400px;
+            margin: 0 45px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery3 img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-con {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .image-con img {
+        width: 90%; 
+        max-width: 1080px;
+        height: auto;
+        border-radius: 15px; 
+    }
+        footer {
+            background-color: #102031;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer p {
+            font-family: 'Arial', sans-serif;
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="logo"></a>
+        <ul>
+            <li><a href="../Beijing opera/HOME.html">HOME</a></li>
+            <li><a href="../Beijing opera/HISTORY.html">HISTORY</a></li>
+            <li><a href="../Beijing opera/MAP.html">MAP</a></li>
+            <li><a href="../Beijing opera/DIGITAL CONTENT.html">DIGITAL CONTENT</a></li>
+            <li><a href="../Beijing opera/VR MEILANFANG.html">VR MEILANFANG</a></li>
+            <li><a href="../Beijing opera/CONTACT.html">CONTACT</a></li>
+        </ul>
+    </header>
+
+    <div class="content-section">
+        <h2>Digital Content</h2>
+        <p>Explore the combination of Peking Opera and different digital technologies📒</p>
+
+<div class="image-section">
+    <div class="image-con">
+        <img src="B4.jpg" alt="Image B4">
+    </div>
+</div>
+
+        <div class="Stage-Effects-section">
+            <h2>Stage Effects</h2>
+            <p>In the scene of "Farewell My Concubine" where Xiang Yu sacrifices himself at the Wu River, the grand river landscape is projected on a large screen, creating a tragic atmosphere.</p>
+
+            <div class="gallery2">
+                <img src="Stage Effects_1.jpg" alt="Image 1">
+                <img src="Stage Effects_2.jpg" alt="Image 2">
+                <img src="Stage Effects_3.jpg" alt="Image 3">
+            </div>
+            <br>
+
+
+
+            <div class="audio-section">
+                <h2>Audio Effects</h2>
+                <p>Enhance the performance of traditional instruments using modern sound technology. For example, in contemporary Peking Opera, surround sound technology can be used to make audiences feel that the sound is coming from all directions,increasing the sense of presence.</p>
+
+                <h3>The Legend of White Snake</h3>
+                <audio controls>
+                    <source src="The Legend of White Snake audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <h3>The Peach Blossom Fan</h3>
+                <audio controls>
+                    <source src="The Peach Blossom Fan audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <h3>Farewell My Concubine</h3>
+                <audio controls>
+                    <source src="Farewell My Concubine audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="gallery">
+                <div class="gallery-theme">
+                    <h2>Interaction and Communication</h2>
+                    <p>Through digital channels such as social media and digital archives, like live streaming and Peking Opera digital archives, a vast array of performance videos, music and images can be shared. This makes the interaction and communication of Peking Opera culture more convenient and accessible.</p>
+            <div class="gallery3">
+                <a href="https://www.youtube.com/@chinanationaloperacompany6869" target="_blank"><img src="S1.jpg" alt="Image 1"></a>
+                <a href="https://www.youtube.com/@arthurbanksforbeijingopera3091" target="_blank"><img src="S2.jpg" alt="Image 2"></a>
+            </div>
+
+            <div class="gallery3">
+                <a href="https://xqz.wanfangdata.com.cn/" target="_blank"><img src="S3.jpg" alt="Image 1"></a>
+                <a href="https://lib.nacta.edu.cn/zblj/tszy/index.htm" target="_blank"><img src="S4.jpg" alt="Image 2"></a>
+            </div>
+<br><br><br>
+<div class="video-section">
+    <h2>Digital Repertoire Show</h2>
+    <p>Explore Peking Opera repertoire with different themes.</p>
+                    <h3>The Legend of White Snake</h3>
+                    <div class="gallery-row">
+                        <img src="The Legend of White Snake_1.jpg" alt="Theme 1 Image 1">
+                        <img src="The Legend of White Snake_2.jpg" alt="Theme 1 Image 2">
+                        <img src="The Legend of White Snake_3.jpg" alt="Theme 1 Image 3">
+                    </div>
+                </div>
+                <div class="gallery-theme">
+                    <h3>The Peach Blossom Fan</h3>
+                    <div class="gallery-row">
+                        <img src="The Peach Blossom Fan_1.jpg" alt="Theme 2 Image 1">
+                        <img src="The Peach Blossom Fan_2.jpg" alt="Theme 2 Image 2">
+                        <img src="The Peach Blossom Fan_3.jpg" alt="Theme 2 Image 3">
+                    </div>
+                </div>
+                <div class="gallery-theme">
+                    <h3>Farewell My Concubine</h3>
+                    <div class="gallery-row">
+                        <img src="Farewell My Concubine_1.jpg" alt="Theme 3 Image 1">
+                        <img src="Farewell My Concubine_2.jpg" alt="Theme 3 Image 2">
+                        <img src="Farewell My Concubine_3.jpg" alt="Theme 3 Image 3">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+    <footer>
+        <p>&copy; 2024 The Road to Digital Transformation of Peking Opera<br>All rights reserved. Copyright infringement reserved</p>
+    </footer>
+
+</body>
+
+</html>
+

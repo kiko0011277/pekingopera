@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        @font-face {
+            font-family: 'SalisburyBold';
+            src: url('SalisburyBold-PVZXr.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Jersey20Regular';
+            src: url('Jersey20-Regular.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: #66889e;
+            min-height: 100vh;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -95px;
+        }
+
+        header ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            padding: 6px 15px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 20px;
+            background-color: #9dc2de;
+        }
+
+        header ul li a:hover,
+        header ul li a.active {
+            background: #fff;
+            color: #2b1055;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0px;
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(to top, #66889e, transparent);
+            z-index: 4;
+        }
+
+        section img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .sec {
+            position: relative;
+            padding: 60px;
+            background: #66889e;
+        }
+
+        .sec h1 {
+            font-size: 4em;
+            color: #fff;
+            margin-left: 200px;
+            margin-top: -40px;
+            margin-bottom: 20px;
+            font-family: 'SalisburyBold', sans-serif;
+        }
+
+        .cf {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .half {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .cf input[type="text"],
+        .cf input[type="email"],
+        .cf textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background: #fff;
+            font-size: 1em;
+        }
+
+        .cf input[type="submit"] {
+            background: #f39c12;
+            color: #fff;
+            border: none;
+            height: 230px;
+            padding: 15px 30px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cf input[type="submit"]:hover {
+            background: #e67e22;
+        }
+
+        .half.left.cf {
+            text-align: right;
+        }
+
+        .half.right.cf {
+            text-align: left;
+        }
+
+        .sec h2 {
+            font-size: 3.5em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .sec p {
+            font-size: 1em;
+            color: #fff;
+        }
+
+        table {
+            width: 92%; 
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #b2ebf2; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        td {
+            padding: 20px;
+            text-align: center;
+            border: none; 
+            border-radius: 20px;
+            text-align: left; 
+            background-color: #e0f2f1; 
+        }
+
+        .scroll-box {
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #ffffff; 
+            border: 1px solid #b2dfdb; 
+            border-radius: 10px;
+            color: #00796b; 
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        a {
+            color: #00796b; 
+            text-decoration: none; 
+        }
+
+
+        .name-table {
+            width: 80%; 
+            margin: 20px auto; 
+            border-collapse: collapse;
+        }
+        .name-table th, .name-table td {
+            padding: 15px;
+            text-align: center;
+            border: none;
+            font-family: 'SalisburyBold', sans-serif;
+            color: white;
+            background-color: transparent; 
+        }
+
+        .second-table td {
+            background-color: #66889e; 
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #102031;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer p {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+    .fixed-image {
+    height: 35%;
+    width: auto;
+    position: fixed;
+    bottom: 20px; 
+    right: 10px; 
+    display: none;
+    z-index: 1000;
+}
+    body.scrolled .fixed-image {
+    display: block; 
+}
+    </style>
+</head>
+<body>
+<header id="header">
+    <a href="#" class="logo"></a>
+    <ul>
+      <li><a href="../Beijing opera/HOME.html">HOME</a></li>
+      <li><a href="../Beijing opera/HISTORY.html">HISTORY</a></li>
+      <li><a href="../Beijing opera/MAP.html">MAP</a></li>
+      <li><a href="../Beijing opera/DIGITAL CONTENT.html">DIGITAL CONTENT</a></li>
+      <li><a href="../Beijing opera/VR MEILANFANG.html">VR MEILANFANG</a></li>
+      <li><a href="../Beijing opera/CONTACT.html">CONTACT</a></li>
+    </ul>
+</header>
+
+<section>
+    <img src="B2.jpg" alt="back" id="back">
+</section>
+
+<div class="sec">
+    <h1>Contact us anytime, anywhere</h1>
+    <br>
+    <br>
+    <form class="cf">
+        <div class="half left cf">
+            <input type="text" id="input-name" placeholder="Name">
+            <input type="email" id="input-email" placeholder="Email address">
+            <input type="text" id="input-subject" placeholder="Subject">
+        </div>
+        <div class="half right cf">
+            <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+        </div>
+        <input type="submit" value="Submit" id="input-submit">
+    </form>
+</div>
+
+<br>
+<br>
+<br>
+<img src="XT1.png" alt="XT1" style="width:50%; height:auto; display: block; margin: 0 auto;">
+<br>
+<table>
+    <tr>
+        <td>
+            <div class="scroll-box">
+                1. Digitalization meets “Mei Lanfang” in 2011<br>
+                <a href="https://baijiahao.baidu.com/s?id=1716739413180673966&wfr=spider&for=pc">https://baijiahao.baidu.com/s?id=1716739413180673966&wfr=spider&for=pc</a><br><br>
+                2. Overseas Peking Opera communication map （1945—1965）<br>
+                <a href="https://fortress.maptive.com/ver4/new_ui/index.php?map_id=1541341">https://fortress.maptive.com/ver4/new_ui/index.php?map_id=1541341</a><br><br>
+                3. Chinese Peking Opera Mask Art Yu Jing School of Arts, Fujian Agriculture and Forestry University 05/2009<br><br>
+                4. Aesthetic characteristics of traditional Peking Opera art Zhao Jing Voice of the Yellow River Issue 1, 2015<br><br>
+                5.Opera center:<br>
+                <a href="https://www.westkowloon.hk/tc/xiqucentre?venues=drama%20center&TAB=the%20overview">www.westkowloon.hk/tc/xiqucentre?venues= drama center & TAB = the overview</a>
+            </div>
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<img src="XT2.png" alt="XT2" style="width:48%; height:auto; display: block; margin: 0 auto;">
+<br>
+
+<table class="name-table second-table">
+    <tr>
+        <td>22113432 LI YONG</td>
+        <td>22104437 ZENG ZHEN</td>
+        <td>22081256 WANG TONGTONG</td>
+    </tr>
+    <tr>
+        <td>22098600 WANG LU</td>
+        <td>22109419 HUANG LIlI</td>
+        <td>22107671 BU JIAQI</td>
+    </tr>
+</table>
+
+<br>
+<br>
+
+<img src="FWY.png" alt="Fixed Image" class="fixed-image">
+    <script>
+        document.addEventListener('scroll', function() {
+    if (window.scrollY > 0) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
+});
+    </script>
+
+<footer>
+    <p>&copy; 2024 The Road to Digital Transformation of Peking Opera<br>All rights reserved. Copyright infringement reserved</p>
+</footer>
+
+</body>
+</html>

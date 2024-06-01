@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR MEILANFANG</title>
+
+    <style>
+   @font-face {
+    font-family: 'SalisburyBold';
+    src: url('SalisburyBold-PVZXr.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Jersey20Regular';
+    src: url('Jersey20-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(109, 135, 156);
+    min-height: 100vh;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -95px;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #9dc2de;
+}
+
+header ul li a:hover,
+header ul li a.active {
+    background: #fff;
+    color: #2b1055;
+}
+
+.content-section {
+    padding: 100px;
+    background: rgba(9, 75, 101, 0.8);
+    margin: 100px auto;
+    border-radius: 15px;
+    width: 90%;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 3.5em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.content-section h1 {
+    font-size: 1.9em;
+    color: white;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-section p {
+    font-size: 1.3em;
+    color: white;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.gallery-theme {
+    margin-bottom: 50px;
+}
+
+.gallery-theme h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+        .gallery-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; 
+        }
+
+        .gallery-row img {
+            width: 700px;
+            height: 370px;
+            object-fit: cover; 
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+.gallery-row img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+        .gallery-process {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap; 
+            margin-bottom: 20px; 
+        }
+
+        .gallery-process img {
+            width: 470px; 
+            height: 250px;
+            object-fit: cover; 
+            border-radius: 15px; 
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-process img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .text3 {
+            text-align: left; 
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        .text3 p {
+            font-size: 1.3em;
+            color: white;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+.audio-section {
+    padding: 15px;
+    text-align: center;
+}
+
+.audio-section h3 {
+    color: #fff;
+}
+
+.audio-section p {
+    font-size: 1em;
+    color: white;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+        .video1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .video1 video {
+            width: 94%; 
+            height: auto;
+            border-radius: 15px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video1 video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+        }
+
+
+footer {
+    background-color: #102031;
+    padding: 15px;
+    text-align: center;
+}
+
+footer p {
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+    </style>
+
+
+</head>
+
+<body>
+    <header id="header">
+       <a href="#" class="logo"></a>
+       <ul>
+          <li><a href="../Beijing opera/HOME.html">HOME</a></li>
+          <li><a href="../Beijing opera/HISTORY.html">HISTORY</a></li>
+          <li><a href="../Beijing opera/MAP.html">MAP</a></li>
+          <li><a href="../Beijing opera/DIGITAL CONTENT.html">DIGITAL CONTENT</a></li>
+          <li><a href="../Beijing opera/VR MEILANFANG.html">VR MEILANFANG</a></li>
+          <li><a href="../Beijing opera/CONTACT.html">CONTACT</a></li>
+        </ul> 
+    </header>
+
+    <div class="content-section">
+        <div class="gallery-theme">
+            <h2>Digital Mei Lanfang </h2>
+            <br><br><br>
+            <div class="gallery-row">
+                <img src="VR1.jpg" alt="Image 1">
+                <img src="VR2.jpg" alt="Image 1">
+                <div class="text1">
+                   
+                <h1><strong>Project introduction</strong></h1>
+
+                 <p>The Digital Mei Lanfang Project, developed by the virtual avatar lab of the Beijing Institute of Technology (BIT), aims to recreate the 26-year-old style of famous Peking Opera artist Mei Lanfang through modern digital technology. The project, jointly launched by the Beijing Institute of Technology and the Central Academy of Drama (CAD) in 2020, aims to create an interactive "digital Peking Opera artist".</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="gallery-theme">
+            <h2>The Meticulous Process</h2>
+            <div class="gallery-process">
+                <img src="VR3.jpg" alt="Image 3">
+                <img src="VR4.jpg" alt="Image 3">
+                <br><br>
+                <div class="text3">
+                    <p>The project team applied information technology and artificial intelligence to digitize and visualize everything from Mei Lanfang's face, posture and voice to her costumes and props. This included collecting a large number of historical photos and working with professionals from the Central Academy of Fine Arts to make head sculptures based on the photos, which were then scanned with high-precision laser scanners to obtain Mei Lanfang's digital facial structure. <br><br>In addition, in order to improve accuracy, the project team also invited plastic surgery experts to provide advice, and found a Mei Lanfang impersonator, collected her facial data and basic expressions, and then "transplanted" into the digital image. <br><br>In the future, the team plans to further promote the art of Peking Opera by enabling viewers to enjoy and interact virtually in real time through VR headsets. The project not only provides an innovative way for the dissemination and promotion of Peking Opera art, but also sets a model for the modern inheritance of traditional culture. <br></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="audio-section">
+            <div class="video1">
+                <video controls>
+                    <source src="VR2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="text2">
+
+                <p>Accompanied by the melodious music of Beijing and Hu, three spotlights were lit in sequence. 26-year-old Mei Lanfang held a folding fan and walked to the center of the stage with light steps...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+       <p>&copy; 2024 The Road to Digital Transformation of Peking Opera<br>All rights reserved. Copyright infringement reserved</p>
+    </footer>
+</body>
+
+</html>
