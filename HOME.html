@@ -7,223 +7,226 @@
     <title>Home</title>
 
     <style>
-@font-face {
-    font-family: 'SalisburyBold';
-    src: url('SalisburyBold-PVZXr.ttf') format('truetype');
-}
+        @font-face {
+            font-family: 'SalisburyBold';
+            src: url('SalisburyBold-PVZXr.ttf') format('truetype');
+        }
 
-@font-face {
-    font-family: 'Jersey20Regular';
-    src: url('Jersey20-Regular.ttf') format('truetype');
-}
+        @font-face {
+            font-family: 'Jersey20Regular';
+            src: url('Jersey20-Regular.ttf') format('truetype');
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+        body {
+            overflow-x: hidden;
+            background: #66889e;
+            min-height: 100vh;
+        }
 
-  body {
-    overflow-x: hidden;
-    background: #66889e;
-    min-height: 100vh;
-    background-color: ;
-  }
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+        }
 
+        header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -95px;
+        }
 
-  header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10000;
-  }
+        header ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
 
-  header ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: -95px;
-  }
+        header ul li a {
+            text-decoration: none;
+            padding: 6px 15px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 20px;
+            background-color: #9dc2de;
+        }
 
-  header ul li {
-    list-style: none;
-    margin-left: 20px;
-  }
+        header ul li a:hover,
+        header ul li a.active {
+            background: #fff;
+            color: #2b1055;
+        }
 
-  header ul li a {
-    text-decoration: none;
-    padding: 6px 15px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 20px;
-    background-color: #9dc2de;
-  }
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-  header ul li a:hover,
-  header ul li a.active {
-    background: #fff;
-    color: #2b1055;
-  }
+        section::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0px;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, #66889e, transparent);
+            z-index: 2;
+        }
 
-  section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+        section img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            z-index: -1;
+        }
 
-  section::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0px;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to top, #66889e, transparent);
-    z-index: 2;
-  }
+        section #text {
+            position: absolute;
+            color: #094b65;
+            font-size: 10vw;
+            text-align: center;
+            line-height: 0.55em;
+            font-family: 'Rancho', cursive;
+            transform: translateY(-50%);
+        }
 
+        section #text span {
+            font-size: 0.20em;
+            letter-spacing: 2px;
+            font-weight: 400;
+            font-family: 'Poppins', sans-serif;
+        }
 
-  section img {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-    z-index: -1;
-  }
+        .sec {
+            position: relative;
+            padding: 100px;
+            background: #094b65;
+        }
 
-  section #text {
-    position: absolute;
-    color: #094b65;
-    font-size: 10vw;
-    text-align: center;
-    line-height: 0.55em;
-    font-family: 'Rancho', cursive;
-    transform: translateY(-50%);
-  }
+        .sec h2 {
+            font-size: 3.5em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
 
-  section #text span {
-    font-size: 0.20em;
-    letter-spacing: 2px;
-    font-weight: 400;
-    font-family: 'Poppins', sans-serif;
-  }
+        .sec p {
+            font-size: 1em;
+            color: #fff;
+        }
 
-  .sec {
-    position: relative;
-    padding: 100px;
-    background: #094b65;
-  }
-
-  .sec h2 {
-    font-size: 3.5em;
-    color: #fff;
-    margin-bottom: 10px;
-  }
-
-  .sec p {
-    font-size: 1em;
-    color: #fff;
-  }
-
-#T1 {
-    position: absolute;
-    width: 1200px; 
-    height: auto; 
-    left: 130px;
-    top: 150px;
-}
-
-
+        #T1 {
+            position: absolute;
+            width: 1200px;
+            height: auto;
+            left: 130px;
+            top: 150px;
+        }
 
         table {
             width: 100%;
             border-collapse: collapse;
             text-align: center;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid transparent;
-            text-align: center; 
+            text-align: center;
             vertical-align: middle;
             font-family: 'SalisburyBold', sans-serif;
         }
-        .wide-row {
-           height: 250px;
 
-          width: 200px;
-    background-color: #66889e;
-}
-        .narrow-row td {
-            height: 50px; 
+        .wide-row {
+            height: 250px;
+            width: 200px;
+            background-color: #66889e;
         }
+
+        .narrow-row td {
+            height: 50px;
+        }
+
         .wide-row img {
             width: 77%;
             height: auto;
         }
+
         .textbox-row td {
             height: 50px;
-            width: 33.33%; 
+            width: 33.33%;
         }
-                .card {
-                  font-family: 'SalisburyBold', sans-serif;
+
+        .card {
+            font-family: 'SalisburyBold', sans-serif;
             display: inline-block;
             justify-content: center;
             align-items: center;
-            padding-top:10px;
+            padding-top: 10px;
             width: 80%;
             background-color: #354e6b;
             border-radius: 15px;
             color: white;
-            font-size: 1.8em; 
+            font-size: 1.8em;
             text-align: center;
-            line-height: 80px; 
-            transition: transform 0.3s, background-color 0.3s; 
+            line-height: 80px;
+            transition: transform 0.3s, background-color 0.3s;
             cursor: pointer;
             margin-top: 20px;
         }
+
         .card:hover {
-            transform: scale(1.05); 
-            background-color: #4182a4; 
+            transform: scale(1.05);
+            background-color: #4182a4;
         }
+
         .modal {
-            display: none; 
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); 
+            background-color: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
             z-index: 999;
         }
+
         .modal-content {
-    background-color: none
-    color: white;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: left; 
-    font-size: 2em;
-    width: 60%; 
-    height: 50%; 
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center; 
-    position: relative; 
-}
+            background-color: none color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+            font-size: 2em;
+            width: 60%;
+            height: 50%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
+
         .close {
             position: absolute;
             top: 10px;
@@ -233,165 +236,321 @@
             color: white;
         }
 
-.modal-text {
-    font-family: 'Jersey20Regular', sans-serif;
-    font-size: 1.0em; 
-    font-weight: bold;
-    color: white; 
-}
+        .modal-text {
+            font-family: 'Jersey20Regular', sans-serif;
+            font-size: 1.0em;
+            font-weight: bold;
+            color: white;
+        }
 
-  h1 {
-    text-align: center;
-    color: #a8a8a8;
-  }
+        h1 {
+            text-align: center;
+            color: #a8a8a8;
+        }
 
-  form {
-    max-width: 600px;
-    text-align: center;
-    margin: 20px auto;
-  }
+        form {
+            max-width: 600px;
+            text-align: center;
+            margin: 20px auto;
+        }
 
-  input,
-  textarea {
-    border: 0;
-    outline: 0;
-    padding: 1em;
-    display: block;
-    width: 100%;
-    margin-top: 1em;
-    font-family: 'Merriweather', sans-serif;
-    resize: none;
-  }
+        input,
+        textarea {
+            border: 0;
+            outline: 0;
+            padding: 1em;
+            display: block;
+            width: 100%;
+            margin-top: 1em;
+            font-family: 'Merriweather', sans-serif;
+            resize: none;
+        }
 
-  input:focus,
-  textarea:focus {
-    box-shadow: 0 0px 2px rgba(255, 0, 0, 1) !important;
-  }
+        input:focus,
+        textarea:focus {
+            box-shadow: 0 0px 2px rgba(255, 0, 0, 1) !important;
+        }
 
-  #input-submit {
-    color: white;
-    background: lightblue;
-    cursor: pointer;
-  }
+        #input-submit {
+            color: white;
+            background: lightblue;
+            cursor: pointer;
+        }
 
-  #input-submit:hover {
-    box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
-  }
+        #input-submit:hover {
+            box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+        }
 
-  textarea {
-    height: 126px;
-  }
+        textarea {
+            height: 126px;
+        }
 
-  .half {
-    float: left;
-    width: 48%;
-    margin-bottom: 1em;
-  }
+        .half {
+            float: left;
+            width: 48%;
+            margin-bottom: 1em;
+        }
 
-  .right {
-    width: 50%;
-  }
+        .right {
+            width: 50%;
+        }
 
-  .left {
-    margin-right: 2%;
-  }
+        .left {
+            margin-right: 2%;
+        }
 
-  @media (max-width: 480px) {
-    .half {
-      width: 100%;
-      float: none;
-      margin-bottom: 0;
-    }
-  }
+        @media (max-width: 480px) {
+            .half {
+                width: 100%;
+                float: none;
+                margin-bottom: 0;
+            }
+        }
 
-  .cf:before,
-  .cf:after {
-    content: " ";
-    display: table;
-  }
+        .cf:before,
+        .cf:after {
+            content: " ";
+            display: table;
+        }
 
-  .cf:after {
-    clear: both;
-  }
+        .cf:after {
+            clear: both;
+        }
 
-    #A {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: center;
-    }
-    #A th, #A td {
-        border: 1px solid transparent;
-        width: 33.33%;
-        text-align: center; 
-        vertical-align: middle;
-    }
-    .rounded-img {
-        width: 80%; 
-        height: 230px;
-        border-radius: 15px;
-    }
-    .rounded-img:hover {
-        transform: scale(1.05); 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    }
+        #A {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
 
+        #A th,
+        #A td {
+            border: 1px solid transparent;
+            width: 33.33%;
+            text-align: center;
+            vertical-align: middle;
+        }
 
-footer {
-  background-color: #102031;
-  padding: 15px;
-  text-align: center;
-}
+        .rounded-img {
+            width: 80%;
+            height: 230px;
+            border-radius: 15px;
+        }
+
+        .rounded-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #102031;
+            padding: 15px;
+            text-align: center;
+        }
+
         footer p {
             text-align: center;
             font-family: 'Arial', sans-serif;
             color: white;
         }
 
+        h1 {
+            font-family: 'SalisburyBold', sans-serif;
+            text-align: center;
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
 
+        .container {
+            max-width: 1450px;
+            width: 100%;
+            display: flex;
+            margin-left: 15px;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .task-list {
+            background-color: #93b5cf;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 40px);
+            /* Adjust width to align with the container */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .task {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 10px);
+            box-sizing: border-box;
+        }
+
+        .task h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+            color: #66889e;
+        }
+
+        .task p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .task .participants {
+            font-style: italic;
+            color: #555;
+        }
+
+        .task button {
+            cursor: pointer;
+            background-color: #add8e6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .task button:hover {
+            background-color: #87ceeb;
+        }
+
+        .add-task {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .add-task input,
+        .add-task button {
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 1em;
+            width: 100%;
+            /* Make input and button take full width */
+        }
+
+        .add-task input {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .add-task button {
+            cursor: pointer;
+            background-color: #66889e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-task button:hover {
+            background-color: #577b8a;
+        }
+
+    .floating-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #fedc5e; 
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .floating-button:hover {
+        background-color: #fac03d; 
+    }
+
+        .hidden-form {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 300px;
+            background-color: #f0f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
 <body>
-<img id="T1" src="T1.png" alt="T1">
+    <img id="T1" src="T1.png" alt="T1">
 
-  <header id="header">
-    <a href="#" class="logo"></a>
-    <ul>
-      <li><a href="HOME.html">HOME</a></li>
-      <li><a href="HISTORY.html">HISTORY</a></li>
-      <li><a href="MAP.html">MAP</a></li>
-      <li><a href="DIGITAL CONTENT.html">DIGITAL CONTENT</a></li>
-      <li><a href="VR MEILANFANG.html">VR MEILANFANG</a></li>
-      <li><a href="CONTACT.html">CONTACT</a></li>
-    </ul>
-  </header>
+    <header id="header">
+        <a href="#" class="logo"></a>
+        <ul>
+            <li><a href="HOME.html">HOME</a></li>
+            <li><a href="HISTORY.html">HISTORY</a></li>
+            <li><a href="MAP.html">MAP</a></li>
+            <li><a href="DIGITAL CONTENT.html">DIGITAL CONTENT</a></li>
+            <li><a href="VR MEILANFANG.html">VR MEILANFANG</a></li>
+            <li><a href="CONTACT.html">CONTACT</a></li>
+        </ul>
+    </header>
 
-<section>
-    <img src="bg1.png" alt="back" id="back">
-  </section>
+    <section>
+        <img src="bg1.png" alt="back" id="back">
+    </section>
 
-<table>
-    <tr class="wide-row">
-        <td colspan="3"><img src="B1.png" alt="B1"></td>
-    </tr>
-    <tr class="narrow-row">
-        <td><img src="LP1.png" alt="B2" style="width:17%; height:auto;"></td>
-        <td><img src="LP2.png" alt="B3" style="width:17%; height:auto;"></td>
-        <td><img src="LP3.png" alt="B4" style="width:17%; height:auto;"></td>
-    </tr>
-    <tr class="textbox-row">
-        <td><div class="card" onclick="showModal('Research objective: To explore the development of the integration of Beijing Opera and digital technology. Research problem:What is the development process of the integration of Peking Opera and digital technology, and what are the key time nodes?')">Digital History</div></td>
-        <td><div class="card" onclick="showModal('Research objective: To preserve and protect the traditional elements of Peking Opera through digital technology. Research problem:How to use digital technology to effectively record and display the traditional elements of Peking Opera, including performing arts, music and repertoire?')">Digital Content</div></td>
-        <td><div class="card" onclick="showModal('Research objective: To use modern technology to improve the accessibility and popularity of Peking Opera. Research problem:How can modern technologies,such as virtual reality,help a new generation of audiences better understand and appreciate Peking Opera?')">AI Application</div></td>
-    </tr>
-</table>
+    <table>
+        <tr class="wide-row">
+            <td colspan="3"><img src="B1.png" alt="B1"></td>
+        </tr>
+        <tr class="narrow-row">
+            <td><img src="LP1.png" alt="B2" style="width:17%; height:auto;"></td>
+            <td><img src="LP2.png" alt="B3" style="width:17%; height:auto;"></td>
+            <td><img src="LP3.png" alt="B4" style="width:17%; height:auto;"></td>
+        </tr>
+        <tr class="textbox-row">
+            <td>
+                <div class="card" onclick="showModal('Research objective: To explore the development of the integration of Beijing Opera and digital technology. Research problem:What is the development process of the integration of Peking Opera and digital technology, and what are the key time nodes?')">Digital History</div>
+            </td>
+            <td>
+                <div class="card" onclick="showModal('Research objective: To preserve and protect the traditional elements of Peking Opera through digital technology. Research problem:How to use digital technology to effectively record and display the traditional elements of Peking Opera, including performing arts, music and repertoire?')">Digital Content</div>
+            </td>
+            <td>
+                <div class="card" onclick="showModal('Research objective: To use modern technology to improve the accessibility and popularity of Peking Opera. Research problem:How can modern technologies,such as virtual reality,help a new generation of audiences better understand and appreciate Peking Opera?')">AI Application</div>
+            </td>
+        </tr>
+    </table>
 
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="hideModal()">&times;</span>
-        <span id="modal-text" class="modal-text"></span>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal()">&times;</span>
+            <span id="modal-text" class="modal-text"></span>
+        </div>
     </div>
-</div>
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -401,54 +560,131 @@ footer {
     </div>
 
     <script>
-function showModal(text) {
-    var modalText = document.getElementById('modal-text');
-    modalText.innerHTML = text.replace('Research objective:', 'Research objective:<br>').replace('Research problem:', '<br><br>Research problem:<br>');
-    modalText.classList.add('modal-text'); 
-    document.getElementById('modal').style.display = 'flex';
-}
+        function showModal(text) {
+            var modalText = document.getElementById('modal-text');
+            modalText.innerHTML = text.replace('Research objective:', 'Research objective:<br>').replace('Research problem:', '<br><br>Research problem:<br>');
+            modalText.classList.add('modal-text');
+            document.getElementById('modal').style.display = 'flex';
+        }
 
-function hideModal() {
-    document.getElementById('modal').style.display = 'none';
-}
+        function hideModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
     </script>
 
-<br>
+    <br>
 
-<script>
-let back = document.getElementById('back');
-  
-window.addEventListener('scroll', function(){
+    <script>
+        let back = document.getElementById('back');
 
-let value = window.scrollY;
-back.style.top = value * 0.25 + 'px';
-})
-</script>
+        window.addEventListener('scroll', function() {
 
-<script>
-window.addEventListener('scroll', function() {
-    var fixedImage = document.getElementById('fixed-image');
-    if (window.scrollY > 100) { 
-        fixedImage.style.display = 'block';
-    } else {
-        fixedImage.style.display = 'none';
-    }
-});
-</script>
+            let value = window.scrollY;
+            back.style.top = value * 0.25 + 'px';
+        })
+    </script>
 
-<table id="A">
-    <tr>
-        <td><img src="A1.jpg" alt="A1" class="rounded-img"></td>
-        <td><img src="A2.jpg" alt="A2" class="rounded-img"></td>
-        <td><img src="A3.jpg" alt="A3" class="rounded-img"></td>
-    </tr>
-</table>
+    <script>
+        window.addEventListener('scroll', function() {
+            var fixedImage = document.getElementById('fixed-image');
+            if (window.scrollY > 100) {
+                fixedImage.style.display = 'block';
+            } else {
+                fixedImage.style.display = 'none';
+            }
+        });
+    </script>
 
-<br>
-<br>
-<br>
-<footer>
-    <p>&copy; 2024The Road to Digital Transformation of Peking Opera<br>All rights reserved. Copyright infringement reserved</p>
+    <table id="A">
+        <tr>
+            <td><img src="A1.jpg" alt="A1" class="rounded-img"></td>
+            <td><img src="A2.jpg" alt="A2" class="rounded-img"></td>
+            <td><img src="A3.jpg" alt="A3" class="rounded-img"></td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+    <h1>PROJECT TASK LOG</h1>
+    <br>
+    <div class="container">
+        <div class="task-list" id="taskList">
+            <!-- Task list -->
+        </div>
+        <div class="add-task hidden-form" id="addTaskForm">
+            <input type="text" id="taskName" placeholder="Task Name">
+            <input type="text" id="taskTime" placeholder="Task Time">
+            <input type="text" id="taskParticipants" placeholder="Participants">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <button class="floating-button" onclick="toggleTaskForm()">+</button>
+    </div>
+
+    <script>
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || predefinedTasks;
+
+        function renderTasks() {
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = '';
+            tasks.forEach((task, index) => {
+                const taskElement = document.createElement('div');
+                taskElement.className = 'task';
+                taskElement.innerHTML = `
+                    <h3>${task.name}</h3>
+                    <p><strong>Time:</strong> ${task.time}</p>
+                    <p class="participants"><strong>Participants:</strong> ${task.participants}</p>
+                    <button onclick="deleteTask(${index})">Delete Task</button>
+                `;
+                taskList.appendChild(taskElement);
+            });
+        }
+
+        function addTask() {
+            const name = document.getElementById('taskName').value;
+            const time = document.getElementById('taskTime').value;
+            const participants = document.getElementById('taskParticipants').value;
+            if (name && time && participants) {
+                tasks.push({ name, time, participants });
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                renderTasks();
+                document.getElementById('taskName').value = '';
+                document.getElementById('taskTime').value = '';
+                document.getElementById('taskParticipants').value = '';
+            }
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            renderTasks();
+        }
+
+        function toggleTaskForm() {
+            const form = document.getElementById('addTaskForm');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', renderTasks);
+    </script>
+
+    <br>
+    <br>
+    <br>
+
+    <footer>
+        <p>&copy; 2024 The Road to Digital Transformation of Peking Opera<br>All rights reserved. Copyright infringement reserved</p>
+
+    </footer>
+
+</body>
+
+</html>
 
   </footer>
 
