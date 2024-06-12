@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Content</title>
+    <title>DIGITAL PROCESS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         @font-face {
             font-family: 'SalisburyBold';
             src: url('SalisburyBold-PVZXr.ttf') format('truetype');
         }
-
         @font-face {
             font-family: 'Jersey20Regular';
             src: url('Jersey20-Regular.ttf') format('truetype');
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            color: #fff;
         }
-
         body {
             overflow-x: hidden;
-            background-color: rgb(109, 135, 156);
+            background: #66889e;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
-
         header {
             position: absolute;
             top: 0;
@@ -43,19 +38,16 @@
             align-items: center;
             z-index: 10000;
         }
-
         header ul {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-right: -95px;
         }
-
         header ul li {
             list-style: none;
             margin-left: 20px;
         }
-
         header ul li a {
             text-decoration: none;
             padding: 6px 15px;
@@ -65,183 +57,172 @@
             border-radius: 20px;
             background-color: #9dc2de;
         }
-
         header ul li a:hover,
         header ul li a.active {
             background: #fff;
             color: #2b1055;
         }
-    .video-container {
-        display: flex;
-        gap: 20px; 
-        justify-content: center; 
-    }
-
-    .video-container iframe {
-        border-radius: 15px; 
-    }
-        .content-section {
-            padding: 100px;
-            background: rgba(9, 75, 101, 0.8);
-            margin: 100px auto;
-            border-radius: 15px;
-            width: 90%;
+        h1 {
+            font-family:'SalisburyBold';
             text-align: center;
-            flex: 1;
+            margin-top: 20px;
+            font-size: 28px;
         }
-
-        .content-section h2 {
-            font-size: 3.6em;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .content-section p {
-            font-size: 1.5em;
-            color: lightblue;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .gallery {
+        .charts-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
+        }
+        .left-charts {
+            width: 40%;
+            display: flex;
             flex-wrap: wrap;
+            justify-content: space-around;
         }
-
-        .gallery-theme {
-            margin-bottom: 35px;
-        }
-
-        .gallery-theme h3 {
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .gallery-theme .gallery-row {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .gallery-theme .gallery-row img {
-            width: 90%;
-            height: auto;
-            max-width: 300px;
-            margin: 0 10px;
-            border-radius: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .gallery-theme .gallery-row img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .audio-section {
-            padding: 50px;
+        .chart-container {
+            width: 40%;
+            margin: 10px;
             text-align: center;
+            position: relative;
         }
-
-        .audio-section audio {
-            width: 60%;
-            margin: 20px 0;
-        }
-
-        .audio-section h3 {
-            color: #fff;
-        }
-
-        .audio-section p {
-            font-size: 1em;
-            color: black;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .Stage-Effects-section {
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        .Stage-Effects-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        .Stage-Effects-section p {
-            font-size: 1.3em;
-            color: lightblue;
-            margin-bottom: 20px;
-        }
-
-        .gallery2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .gallery2 img {
-            width: 90%;
-            height: auto;
-            max-width: 300px;
-            margin: 0 30px;
-            border-radius: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .gallery2 img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .gallery3 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .gallery3 img {
-            width: 90%;
-            height: auto;
-            max-width: 400px;
-            margin: 0 45px;
-            border-radius: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .gallery3 img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .image-con {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .image-con img {
-        width: 90%; 
-        max-width: 1080px;
-        height: auto;
-        border-radius: 15px; 
-    }
-        footer {
-            background-color: #102031;
-            padding: 15px;
-            text-align: center;
+        .chart-container canvas {
             width: 100%;
-            box-sizing: border-box;
+            height: auto;
+        }
+        .chart-label {
+            margin-top: 10px;
+        }
+        .chart-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .right-chart {
+            width: 55%;
+            margin: 20px;
+        }
+        .qa-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 50px;
+        }
+        .qa-column {
+            width: 35%; /* Adjusted width */
+        }
+        .qa-column.answers {
+            width: 60%; /* Adjusted width */
+        }
+        .qa-box {
+            margin: 30px 10px; /* Increased margin */
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            word-wrap: break-word;
+        }
+        .answer-box {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            word-wrap: break-word;
+            cursor: pointer;
+        }
+        .answer-box.dragging {
+            opacity: 0.5;
+        }
+        .droppable {
+            border: 2px dashed #ddd;
+            min-height: 60px;
+            margin-bottom: 20px;
+        }
+        .invisible {
+            display: none;
+        }
+        .hovered {
+            background-color: #e0e0e0;
+        }
+        .qa-title img {
+            display: block;
+            width: 75%;
+            margin: 20px auto;
+        }
+        .answer-container {
+            margin-top: 10px;
+        }
+        .correct {
+            background-color: #c8e6c9 !important;
+        }
+        .incorrect {
+            background-color: #ffcdd2 !important;
+        }
+        .he2 {
+            font-size: 2.8em;
+            text-align: center
+        }
+        .he1 {
+            font-size: 1.2em;
+            width: 90%;
+            margin-left: 70px;
+        }
+        .centered-image {
+            display: block;
+            margin: 0 auto;
+            border-radius: 20px;
+            width: 87%;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .card {
+            width: 30%;
+
+            border-radius: 20px;
+            margin: 10px;
+            padding: 10px;
+
+        }
+        .card-title {
+
+            background-color: black;
+            border-radius: 20px 20px 0 0;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .card-content {
+            font-family:'SalisburyBold';
+            background-color: lightblue;
+            color: lightblue;
+            border-radius: 0 0 20px 20px;
+            padding: 10px;
         }
 
+        footer {
+  background-color: #102031;
+  padding: 15px;
+  text-align: center;
+}
         footer p {
+            text-align: center;
             font-family: 'Arial', sans-serif;
             color: white;
-            margin: 0;
         }
     </style>
 </head>
-
 <body>
     <header id="header">
         <a href="#" class="logo"></a>
@@ -254,102 +235,1038 @@
             <li><a href="CONTACT.html">CONTACT</a></li>
         </ul>
     </header>
+    <br><br><br><br><br><br>
+    <div class="he2">
+        <p><strong>The Digital process of Peking Opera In CHINA</strong></p>
+    </div>
+    <br><br>
+<div style="display: flex; align-items: center;">
+    <img src="B4.jpg" alt="Digital Process of Peking Opera" style="width: 40%; border-radius: 20px; margin-right: 30px;margin-left: 20px;">
+    <div style="width: 55%;font-size: 1.3em; line-height: 1.5em;margin-right: 70px;">
+        <p style="text-align: left;">Since the beginning of The 2010s, the digital process of Beijing Opera has not stopped, including not only the innovation in the form of communication, but also the combination of Beijing Opera and digital technology.<br><br>This chapter will analyze the digital road of Chinese Peking Opera from three parts: the digital equipment of Chinese Peking Opera theater, the digital content of Peking Opera, and the feedback of Peking Opera audience.</p>
+    </div>
+</div>
+    <br><br><br>
+    <h1>The digital development of Peking Opera theaters</h1>
+    <br><br>
+    <p style="text-align: center;">There are now 200 Peking Opera theaters throughout China. This project selected a sample of 50 ones, surveyed their digital device penetration rates, and analyzed the data.<br>📌：Important policy        🔔：Important event</p>
+    <br><br>
 
-    <div class="content-section">
-        <h2>Digital Content</h2>
-        <p>Explore the combination of Peking Opera and different digital technologies📒</p>
-
-<div class="image-section">
-    <div class="image-con">
-        <img src="B4.jpg" alt="Image B4">
+<div class="new-cards-container">
+    <div class="new-card">
+        <img src="Stage Effects_1.jpg" alt="Stage Effects 1">
+        <p>Digital Lighting Systems<br>Multimedia Projection Technology<br><br>Enrich the visual effect of the performance, while highlighting performance details and enhances emotional expression and stage aesthetics.</p>
+    </div>
+    <div class="new-card">
+        <img src="Stage Effects_5.jpg" alt="Stage Effects 5">
+        <p>Digital Audio Systems<br><br>Enhance the clarity of the performance sound in the theater, while providing a more realistic sound effect that can not be created before, so that the audience is immersed in the experience.</p>
+    </div>
+    <div class="new-card">
+        <img src="Stage Effects_6.jpg" alt="Stage Effects 6">
+        <p>Social Media and Live Streaming Equipment<br><br>It not only significantly expands the scope of the audience, but also enhances the audience's interactive experience by breaking through the geographical and venue restrictions.</p>
+    </div>
+    <div class="new-card">
+        <img src="Stage Effects_7.jpg" alt="Stage Effects 7">
+        <p>Electronic Ticketing System<br><br>It enables the audience to purchase Peking Opera tickets online conveniently, simplifies the ticket purchase process, and improves the efficiency of ticket management.</p>
     </div>
 </div>
 
-        <div class="Stage-Effects-section">
-            <h2>Stage Effects</h2>
-            <p>In the scene of "Farewell My Concubine" where Xiang Yu sacrifices himself at the Wu River, the grand river landscape is projected on a large screen, creating a tragic atmosphere.</p>
+<style>
+    
+.new-cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
 
-            <div class="gallery2">
-                <img src="Stage Effects_1.jpg" alt="Image 1">
-                <img src="Stage Effects_2.jpg" alt="Image 2">
-                <img src="Stage Effects_3.jpg" alt="Image 3">
+.new-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    width: 22%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.new-card img {
+    width: 100%;
+    height: 180px; /* 固定图片高度 */
+    object-fit: cover; /* 确保图片按比例缩放，并覆盖整个区域 */
+    border-bottom: 1px solid #ddd;
+}
+
+.new-card p {
+    font-family:'SalisburyBold';
+    margin: 10px;
+    color: black;
+    font-size: 16px;
+}
+
+</style>
+
+<br><br>
+
+    <div class="charts-container">
+        <div class="left-charts">
+            <div class="chart-container">
+                <canvas id="chart1"></canvas>
+                <div class="chart-percentage" id="percentage1">100%</div>
+                <p class="chart-label">Digital Audio Systems</p>
             </div>
-            <br>
-
-
-
-            <div class="audio-section">
-                <h2>Audio Effects</h2>
-                <p>Enhance the performance of traditional instruments using modern sound technology. For example, in contemporary Peking Opera, surround sound technology can be used to make audiences feel that the sound is coming from all directions,increasing the sense of presence.</p>
-
-                <h3>The Legend of White Snake</h3>
-                <audio controls>
-                    <source src="The Legend of White Snake audio.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <h3>The Peach Blossom Fan</h3>
-                <audio controls>
-                    <source src="The Peach Blossom Fan audio.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <h3>Farewell My Concubine</h3>
-                <audio controls>
-                    <source src="Farewell My Concubine audio.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+            <div class="chart-container">
+                <canvas id="chart2"></canvas>
+                <div class="chart-percentage" id="percentage2">100%</div>
+                <p class="chart-label">Digital Lighting Systems</p>
             </div>
-
-            <div class="gallery">
-                <div class="gallery-theme">
-                    <h2>Interaction and Communication</h2>
-                    <p>Through digital channels such as social media and digital archives, like live streaming and Peking Opera digital archives, a vast array of performance videos, music and images can be shared. This makes the interaction and communication of Peking Opera culture more convenient and accessible.</p>
-            <div class="gallery3">
-                <a href="https://www.youtube.com/@chinanationaloperacompany6869" target="_blank"><img src="S1.jpg" alt="Image 1"></a>
-                <a href="https://www.youtube.com/@arthurbanksforbeijingopera3091" target="_blank"><img src="S2.jpg" alt="Image 2"></a>
+            <div class="chart-container">
+                <canvas id="chart3"></canvas>
+                <div class="chart-percentage" id="percentage3">87%</div>
+                <p class="chart-label">Multimedia Projection Technology</p>
             </div>
-
-            <div class="gallery3">
-                <a href="https://xqz.wanfangdata.com.cn/" target="_blank"><img src="S3.jpg" alt="Image 1"></a>
-                <a href="https://lib.nacta.edu.cn/zblj/tszy/index.htm" target="_blank"><img src="S4.jpg" alt="Image 2"></a>
+            <div class="chart-container">
+                <canvas id="chart4"></canvas>
+                <div class="chart-percentage" id="percentage4">65%</div>
+                <p class="chart-label">Electronic Ticketing System</p>
             </div>
-<br><br><br>
-<div class="video-section">
-    <h2>Digital Repertoire Show</h2>
-    <p>Explore Peking Opera repertoire with different themes.</p>
-                    <h3>The Legend of White Snake</h3>
-                    <div class="gallery-row">
-                        <img src="The Legend of White Snake_1.jpg" alt="Theme 1 Image 1">
-                        <img src="The Legend of White Snake_2.jpg" alt="Theme 1 Image 2">
-                        <img src="The Legend of White Snake_3.jpg" alt="Theme 1 Image 3">
-                    </div>
-                </div>
-                <div class="gallery-theme">
-                    <h3>The Peach Blossom Fan</h3>
-                    <div class="gallery-row">
-                        <img src="The Peach Blossom Fan_1.jpg" alt="Theme 2 Image 1">
-                        <img src="The Peach Blossom Fan_2.jpg" alt="Theme 2 Image 2">
-                        <img src="The Peach Blossom Fan_3.jpg" alt="Theme 2 Image 3">
-                    </div>
-                </div>
-                <div class="gallery-theme">
-                    <h3>Farewell My Concubine</h3>
-                    <div class="gallery-row">
-                        <img src="Farewell My Concubine_1.jpg" alt="Theme 3 Image 1">
-                        <img src="Farewell My Concubine_2.jpg" alt="Theme 3 Image 2">
-                        <img src="Farewell My Concubine_3.jpg" alt="Theme 3 Image 3">
-                    </div>
-                </div>
+            <div class="chart-container">
+                <canvas id="chart5"></canvas>
+                <div class="chart-percentage" id="percentage5">43%</div>
+                <p class="chart-label">Social Media and Live Streaming Equipment</p>
             </div>
-
+            <div class="chart-container">
+                <canvas id="chart6"></canvas>
+                <div class="chart-percentage" id="percentage6">2%</div>
+                <p class="chart-label">VR and AR Equipment</p>
+            </div>
+        </div>
+        <div class="right-chart">
+            <canvas id="lineChart"></canvas>
         </div>
     </div>
-  </div>
+    <h1>Peking Opera digital process policy(2010-2024)</h1>
+    <div class="cards-container">
+        <div class="card">
+            <div class="card-title">⭐️Outline of the National Cultural Reform and Development Plan during the Twelfth Five-Year Plan Period - 2012</div>
+            <div class="card-content">
+                <p>Clarified the goals of strengthening the protection and development of traditional opera arts, encouraging social forces to participate in the protection and promotion of opera culture, increasing investment in Peking Opera, and promoting the implementation of Peking Opera script digitization projects.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Opinions on Strengthening Opera Education - 2014</div>
+            <div class="card-content">
+                <p></p>
+                <p>Emphasized the importance of opera education, proposed the promotion of opera education across the country, strengthened the construction of Peking Opera professional colleges, cultivated opera professionals, and improved the construction of theater facilities.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Outline of the National Cultural Development and Reform Plan during the Thirteenth Five-Year Plan Period - 2016</div>
+            <div class="card-content">
+                <p></p>
+                <p>Proposed to continue promoting the inheritance and innovative development of traditional opera arts, including Peking Opera, during the Thirteenth Five-Year Plan period, and improve relevant support policies and measures.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">⭐️Several Policies on Supporting the Inheritance and Development of Opera - 2018</div>
+            <div class="card-content">
+                <p></p>
+                <p>Focuse on supporting opera art creation, talent cultivation, improvement of performance conditions, digitalization process, and international exchange, comprehensively promoting the development of traditional opera arts such as Peking Opera.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Implementation Opinions on Promoting the Digital Development of Opera Art - 2020</div>
+            <div class="card-content">
+                <p></p>
+                <p>Proposed to use digital technology to promote the development of opera arts such as Peking Opera, build a digital opera resource library, and promote online live broadcasts and performances.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Several Measures to Further Promote the Revitalization and Development of Opera - 2023</div>
+            <div class="card-content">
+                <p></p>
+                <p>Proposed a number of measures to promote the revitalization and development of opera arts, including supporting the creation, inheritance, and performance of Peking Opera.</p>
+            </div>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 The Road to Digital Transformation of Peking Opera<br>All rights reserved. Copyright infringement reserved</p>
-    </footer>
 
+    <span class="star" onclick="showExplanation(this)" style="top: 1479px; left: 1123px;">📌</span>
+<div class="explanation-box" style="top: 1479px; left: 1170px;">Policy:Several Policies on Supporting the Inheritance and Development of Opera</div>
+
+<span class="star" onclick="showExplanation(this)" style="top: 1850px; left: 770px;">📌</span>
+<div class="explanation-box" style="top: 1850px; left: 830px;">Policy:Outline of the National Cultural Reform and Development Plan during the Twelfth Five-Year Plan Period</div>
+
+<span class="star" onclick="showExplanation(this)" style="top: 1800px; left: 1240px;">📌</span>
+<div class="explanation-box" style="top: 1800px; left: 1280px;">Policy: Beijing, Shanghai, Jiangsu, Guangzhou, Shenzhen and other local governments have introduced subsidies for online tickets for Peking Opera</div>
+
+<span class="star" onclick="showExplanation(this)" style="top: 2030px; left: 1194px;">🔔</span>
+<div class="explanation-box" style="top: 2010px; left: 1240px;">COVID-19 pandemic</div>
+
+
+
+<style>
+.star {
+    cursor: pointer;
+    font-size: 24px;
+    color: yellow;
+    position: absolute;
+}
+
+.explanation-box {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+    width: 200px;
+}
+
+</style>
+
+<script>
+function showExplanation(starElement) {
+    let explanationBox = starElement.nextElementSibling;
+    if (explanationBox.style.display === 'block') {
+        explanationBox.style.display = 'none';
+    } else {
+        explanationBox.style.display = 'block';
+    }
+}
+</script>
+
+<div class="filter-container">
+    <div class="filter-left">
+        <h2>Digital equipment in theatres by region <br>(Filter by equipment)</h2>
+        <br>
+        <div class="filter-card">
+            <div class="filter-title">Filter by Equipment</div>
+            <div class="filter-options">
+                <label><input type="checkbox" value="Digital Audio Systems" onclick="filterTheaters()"> Digital Audio Systems</label>
+                <label><input type="checkbox" value="Digital Lighting Systems" onclick="filterTheaters()"> Digital Lighting Systems</label>
+                <label><input type="checkbox" value="Multimedia Projection Technology" onclick="filterTheaters()"> Multimedia Projection Technology</label>
+                <label><input type="checkbox" value="Electronic Ticketing System" onclick="filterTheaters()"> Electronic Ticketing System</label>
+                <label><input type="checkbox" value="Social Media and Live Streaming Equipment" onclick="filterTheaters()"> Social Media and Live Streaming Equipment</label>
+                <label><input type="checkbox" value="VR and AR Equipment" onclick="filterTheaters()"> VR and AR Equipment</label>
+            </div>
+        </div>
+    </div>
+    <div class="theater-list">
+        <h3>Theater List</h3>
+        <ul id="theaterList">
+            <!-- Beijing Theaters -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Chang'an Grand Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment, VR and AR Equipment">🎭 Mei Lanfang Grand Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 National Center for the Performing Arts</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Tianqiao Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Zhongshan Park Music Hall</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Beijing People's Art Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Huguang Guild Hall Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Jixiang Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Daguan Garden Red Mansion Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Chaoyang Theater</li>
+            
+            <!-- Shanghai Theaters -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Shanghai Peking Opera Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Tianzhan Yifu Stage</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Shanghai Grand Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Shanghai Theater Academy Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Lansheng Grand Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Oriental Art Center</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Shanghai Children's Art Theater</li>
+
+            <!-- Tianjin Theaters -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Tianjin Peking Opera Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Binhu Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Zhonghua Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Pingjin Campaign Memorial Hall Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Grand Hall Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Tianjin Grand Theater</li>
+
+            <!-- Nanjing Theaters -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Nanjing Cultural Arts Center</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Nanjing Peking Opera Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Nanjing People's Assembly Hall</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Nanjing Little Red Flower Art Theater</li>
+
+            <!-- Chengdu Theaters -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Sichuan Peking Opera Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Chengdu Sichuan Opera Art Center</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Jincheng Art Palace</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Social Media and Live Streaming Equipment">🎭 Chengdu Grand Theater</li>
+
+            <!-- Guangzhou Theaters -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Guangzhou Peking Opera Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Friendship Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Guangzhou Grand Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Social Media and Live Streaming Equipment">🎭 Guangzhou Cantonese Opera Art Museum Theater</li>
+
+            <!-- Xi'an Theaters -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Shaanxi Peking Opera Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Xi'an Concert Hall</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Social Media and Live Streaming Equipment">🎭 Yisu Grand Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Social Media and Live Streaming Equipment">🎭 Xi'an Grand Theater</li>
+
+            <!-- Wuhan Theaters -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Hubei Peking Opera Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Wuhan Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Social Media and Live Streaming Equipment">🎭 Qintai Grand Theater</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Wuhan Peking Opera Theater</li>
+
+            <!-- Other Cities -->
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Hangzhou Peking Opera Theater (Hangzhou)</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Hunan Peking Opera Theater (Changsha)</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Chongqing Peking Opera Theater (Chongqing)</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Social Media and Live Streaming Equipment">🎭 Shenyang Peking Opera Theater (Shenyang)</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System">🎭 Jinan Peking Opera Theater (Jinan)</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology, Electronic Ticketing System, Social Media and Live Streaming Equipment">🎭 Qingdao Grand Theater (Qingdao)</li>
+            <li data-equipment="Digital Audio Systems, Digital Lighting Systems, Multimedia Projection Technology">🎭 Kunming Theater (Kunming)</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .filter-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    .filter-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 20%;
+    }
+
+    .filter-card {
+        width: 100%;
+        background: #9dc2de;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        color: #fff;
+    }
+
+    .filter-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .filter-options {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-options label {
+        margin-bottom: 10px;
+    }
+
+    .theater-list {
+        width: 78%;
+        background: #9dc2de;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        color: #fff;
+    }
+
+    .theater-list h3 {
+        margin-bottom: 10px;
+    }
+
+    .theater-list ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .theater-list ul li {
+        flex: 1 1 calc(20% - 10px);
+        background: #fff;
+        color: #2b1055;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 14px; /* 调整字体大小 */
+    }
+
+    .theater-list ul li.hidden {
+        display: none;
+    }
+</style>
+
+<script>
+    function filterTheaters() {
+        const checkboxes = document.querySelectorAll('.filter-options input[type="checkbox"]');
+        const theaterList = document.getElementById('theaterList').children;
+
+        let selectedFilters = [];
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedFilters.push(checkbox.value);
+            }
+        });
+
+        for (let theater of theaterList) {
+            const equipment = theater.getAttribute('data-equipment').split(', ');
+            const matches = selectedFilters.every(filter => equipment.includes(filter));
+
+            if (matches || selectedFilters.length === 0) {
+                theater.classList.remove('hidden');
+            } else {
+                theater.classList.add('hidden');
+            }
+        }
+    }
+</script>
+
+</div>
+
+    <!-- Q&A Section -->
+    <div class="qa-title">
+        <img src="TTT1.png" alt="Q&A on the digitization process of Peking Opera">
+    </div>
+    <div class="qa-container">
+        <div class="qa-column">
+            <div id="questionBox1" class="qa-box droppable">Q1: In 2012, the number of Peking Opera theaters equipped with various digital equipment increased significantly. Please choose the most appropriate reason for this phenomenon.
+                <div class="answer-container" id="answerContainer1"></div>
+            </div>
+            <div id="questionBox2" class="qa-box droppable">Q2: From 2018 to 2020, the Peking Opera theater completed basic digital equipment complete coverage and began to accelerate the process of digital devices equipped with a higher level. Please select a policy reason that fits this phenomenon.
+                <div class="answer-container" id="answerContainer2"></div>
+            </div>
+            <div id="questionBox3" class="qa-box droppable">Q3: From 2020 to 2022, a number of Peking Opera theaters have chosen to equip themselves with live broadcasting equipment. Please choose the reasons for this phenomenon.
+                <div class="answer-container" id="answerContainer3"></div>
+            </div>
+        </div>
+        <div class="qa-column answers">
+            <div id="answer1" class="answer-box draggable" draggable="true">Policy support: The government issued the Outline of the National Cultural Reform and Development Plan during the Twelfth Five-Year Plan Period, which clarified the goals and directions for the development of the Peking Opera industry.<br>Financial support: Increase financial support for the cultural industry, set up a special fund for the development of the Peking Opera cultural industry, encourage social capital to enter the Peking Opera industry, and promote the reform of the Peking Opera theater system.</div>
+            <div id="answer2" class="answer-box draggable" draggable="true">The General Office of the CPC Central Committee and The General Office of the State Council jointly issued Several Policies on Supporting the Inheritance and Development of Opera, aiming to promote the creation and performance of opera art, strengthen the training of opera talents, improve performance conditions, promote the digital process of opera, and enhance the international influence of opera culture through increasing financial support and policy support. Ensure the inheritance and innovative development of the traditional culture and art of opera.</div>
+            <div id="answer3" class="answer-box draggable" draggable="true">The outbreak of the COVID-19 pandemic has kept audiences out of theaters, so many theaters have turned their attention to live broadcasting and recording Peking Opera, opening social media accounts and releasing Peking Opera videos, so many theaters have equipped live broadcasting and recording equipment during this period.</div>
+            <div id="answer4" class="answer-box draggable" draggable="true">Funding and investment from private sectors have decreased, causing Peking Opera theaters to seek alternative methods for revenue generation.</div>
+            <div id="answer5" class="answer-box draggable" draggable="true">The number of performances has decreased significantly, leading theaters to find new ways to engage audiences.</div>
+        </div>
+    </div>
+    <script>
+        const donutData = [
+            { id: 'chart1', value: 100, label: 'Digital Audio Systems', percentage: '100%' },
+            { id: 'chart2', value: 100, label: 'Digital Lighting Systems', percentage: '100%' },
+            { id: 'chart3', value: 87, label: 'Multimedia Projection Technology', percentage: '87%' },
+            { id: 'chart4', value: 65, label: 'Electronic Ticketing System', percentage: '65%' },
+            { id: 'chart5', value: 43, label: 'Social Media and Live Streaming Equipment', percentage: '43%' },
+            { id: 'chart6', value: 2, label: 'VR and AR Equipment', percentage: '2%' }
+        ];
+        donutData.forEach(item => {
+            const ctx = document.getElementById(item.id).getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [item.value, 100 - item.value],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 0.2)'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.raw + '%';
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%',
+                    responsive: true,
+                    maintainAspectRatio: true
+                }
+            });
+        });
+        const lineCtx = document.getElementById('lineChart').getContext('2d');
+        new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: ['2010', '2012', '2014', '2016', '2018', '2020', '2022', '2024'],
+                datasets: [
+                    {
+                        label: 'Digital Audio Systems',
+                        data: [32, 35, 42, 47, 50, 50, 50, 50],
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: false
+                    },
+                    {
+                        label: 'Digital Lighting Systems',
+                        data: [37, 42, 48, 50, 50, 50, 50, 50],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: false
+                    },
+                    {
+                        label: 'Multimedia Projection Technology',
+                        data: [7, 11, 23, 26, 32, 47, 50, 50],
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        fill: false
+                    },
+                    {
+                        label: 'Electronic Ticketing System',
+                        data: [0, 2, 7, 11, 13, 20, 29, 31],
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        fill: false
+                    },
+                    {
+                        label: 'Social Media and Live Streaming Equipment',
+                        data: [0, 0, 0, 0, 10, 13, 21, 22],
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: false
+                    },
+                    {
+                        label: 'VR and AR Equipment',
+                        data: [0, 0, 0, 0, 0, 0, 0, 1],
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 50,
+                        ticks: {
+                            stepSize: 2.5,
+                            color: '#fff' // Change color of y-axis labels to white
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            autoSkip: false,
+                            color: '#fff' // Change color of x-axis labels to white
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#fff' // Change color of legend text to white
+                        }
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+        // Randomize answer order
+        const answerContainer = document.querySelector('.qa-column.answers');
+        for (let i = answerContainer.children.length; i >= 0; i--) {
+            answerContainer.appendChild(answerContainer.children[Math.random() * i | 0]);
+        }
+        // Drag and Drop Logic
+        const questionBoxes = document.querySelectorAll('.qa-box.droppable');
+        const answers = document.querySelectorAll('.draggable');
+        answers.forEach(answer => {
+            answer.addEventListener('dragstart', dragStart);
+            answer.addEventListener('dragend', dragEnd);
+        });
+        questionBoxes.forEach(box => {
+            box.addEventListener('dragover', dragOver);
+            box.addEventListener('dragenter', dragEnter);
+            box.addEventListener('dragleave', dragLeave);
+            box.addEventListener('drop', dragDrop);
+        });
+        function dragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.id);
+            setTimeout(() => {
+                e.target.classList.add('invisible');
+            }, 0);
+        }
+        function dragEnd(e) {
+            e.target.classList.remove('invisible');
+            e.target.classList.remove('dragging');
+        }
+        function dragOver(e) {
+            e.preventDefault();
+        }
+        function dragEnter(e) {
+            e.preventDefault();
+            e.target.classList.add('hovered');
+        }
+        function dragLeave(e) {
+            e.target.classList.remove('hovered');
+        }
+        function dragDrop(e) {
+            e.preventDefault();
+            const id = e.dataTransfer.getData('text');
+            const draggable = document.getElementById(id);
+            const answerContainer = e.target.querySelector('.answer-container');
+            if (!answerContainer) return;
+            if (isCorrectAnswer(id, e.target.id)) {
+                answerContainer.appendChild(draggable);
+                draggable.classList.add('correct');
+            } else {
+                draggable.classList.add('incorrect');
+                setTimeout(() => {
+                    draggable.classList.remove('incorrect');
+                }, 1000);
+            }
+            e.target.classList.remove('hovered');
+            draggable.classList.remove('invisible');
+        }
+        function isCorrectAnswer(answerId, questionBoxId) {
+            const correctAnswers = {
+                questionBox1: 'answer1',
+                questionBox2: 'answer2',
+                questionBox3: 'answer3'
+            };
+            return correctAnswers[questionBoxId] === answerId;
+        }
+    </script>
+<br><br>
+<h1>The Digitization of Peking Opera content</h1>
+    <br>
+    <p style="text-align: center;">This chapter takes the most comprehensive database of Peking Opera scripts and the website of Peking Opera records as the research object</p>
+
+<!-- Add the images side by side with the same size and smaller dimensions -->
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <a href="https://scripts.xikao.com/" target="_blank">
+        <img src="TTT2.jpg" alt="Image 1" style="width: 400px; height: 130px; border-radius: 20px; margin-right: 300px;">
+    </a>
+    <a href="https://oldrecords.xikao.com/" target="_blank">
+        <img src="TTT3.jpg" alt="Image 2" style="width: 400px; height: 130px; border-radius: 20px;">
+    </a>
+</div>
+
+<br><br>
+<!-- Add the bar charts side by side -->
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+    <div style="width: 45%;margin-left: 20px;">
+        <canvas id="scriptsChart"></canvas>
+    </div>
+    <div style="width: 45%;margin-right: 40px;">
+        <canvas id="recordsChart"></canvas>
+    </div>
+</div>
+
+<script>
+    const scriptsCtx = document.getElementById('scriptsChart').getContext('2d');
+    const recordsCtx = document.getElementById('recordsChart').getContext('2d');
+
+    const scriptsChart = new Chart(scriptsCtx, {
+        type: 'bar',
+        data: {
+            labels: [
+                '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010',
+                '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',
+                '2019', '2020', '2021', '2022', '2023', '2024'
+            ],
+            datasets: [{
+                label: 'Ancient Peking Opera Scripts (digitized)',
+                data: [
+                    116, 167, 210, 289, 355, 415, 498, 536,
+                    571, 635, 727, 785, 823, 871, 915, 959,
+                    997, 1073, 1141, 1231, 1294, 1301
+                ],
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Year',
+                        color: '#fff'
+                    },
+                    ticks: {
+                        color: '#fff'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Scripts',
+                        color: '#fff'
+                    },
+                    ticks: {
+                        color: '#fff'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            }
+        }
+    });
+
+    const recordsChart = new Chart(recordsCtx, {
+        type: 'bar',
+        data: {
+            labels: [
+                '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010',
+                '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',
+                '2019', '2020', '2021', '2022', '2023', '2024'
+            ],
+            datasets: [{
+                label: 'Old Peking Opera Records (digitized)',
+                data: [
+                    0, 0, 12, 25, 31, 47, 49, 53,
+                    62, 73, 85, 102, 106, 106, 112, 115,
+                    121, 125, 126, 136, 141, 143
+                ],
+                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Year',
+                        color: '#fff'
+                    },
+                    ticks: {
+                        color: '#fff'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Records',
+                        color: '#fff'
+                    },
+                    ticks: {
+                        color: '#fff'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+        <div style="width: 45%;margin-left: 20px;">
+            <canvas id="scriptsLineChart"></canvas>
+        </div>
+        <div style="width: 45%;margin-right: 40px;">
+            <canvas id="recordsLineChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Data for line charts
+        const scriptsYearlyIncrease = [51, 43, 79, 66, 60, 83, 38, 35, 63, 67, 92, 38, 48, 44, 44, 38, 76, 68, 90, 63, 7];
+        const recordsYearlyIncrease =  [0, 12, 13, 6, 16, 2, 4, 9, 11, 12, 17, 4, 0, 6, 3, 6, 4, 1, 10, 5, 2];
+
+        const scriptsLineCtx = document.getElementById('scriptsLineChart').getContext('2d');
+        const recordsLineCtx = document.getElementById('recordsLineChart').getContext('2d');
+
+        const scriptsLineChart = new Chart(scriptsLineCtx, {
+            type: 'line',
+            data: {
+                labels: ['2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Yearly Increase in Ancient Peking Opera Scripts (digitized)',
+                    data: scriptsYearlyIncrease,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        },
+                        ticks: {
+                            color: '#fff'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Number of Scripts'
+                        },
+                        ticks: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#fff'
+                        }
+                    }
+                }
+            }
+        });
+
+        const recordsLineChart = new Chart(recordsLineCtx, {
+            type: 'line',
+            data: {
+                labels: ['2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Yearly Increase in Old Peking Opera Records (digitized)',
+                    data: recordsYearlyIncrease,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        },
+                        ticks: {
+                            color: '#fff'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Number of Records'
+                        },
+                        ticks: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#fff'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+
+<style>
+    .word-cloud-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+    }
+    .word-cloud {
+        width: 50%;
+        height: 500px;
+    }
+    .analysis-box {
+        width: 45%;
+        background: black;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: black;
+    }
+</style>
+
+<div class="word-cloud-container">
+    <div id="wordCloud" class="word-cloud"></div>
+    <div class="analysis-box">
+        <h2>Word cloud analysis</h2>
+        <p>Extract high-frequency keywords from the 50 Peking Opera reviews section of Damai.com (an online platform for purchasing Peking Opera tickets) and the top 100 comments in the forums of the above two databases.<br><br>The most frequent words are:<br>
+"Farewell My Concubine", frequency: 110<br>
+"Stage", frequency: 77<br>
+"Mei Lanfang", frequency: 74<br>
+"Government subsidy", frequency: 50<br>
+"Culture", frequency: 47<br>
+"Performance", frequency: 44<br>
+"Xun School", frequency: 44<br>
+"Live Streaming Time", frequency: 43</p>
+        
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@5.9.2/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.5/build/d3.layout.cloud.min.js"></script>
+<script>
+    var words = [
+        {text: "Farewell My Concubine", size: 110},
+        {text: "Stage", size: 77},
+        {text: "Mei Lanfang", size: 74},
+        {text: "Government subsidy", size: 50},
+        {text: "Culture", size: 47},
+        {text: "Traditional Opera", size: 47},
+        {text: "Performance", size: 44},
+        {text: "Xun School", size: 44},
+        {text: "Live Streaming Time", size: 43},
+        {text: "Development", size: 42},
+        {text: "Digitization", size: 41},
+        {text: "Online Opera", size: 40},
+        {text: "Market", size: 40},
+        {text: "Inheritance", size: 37},
+        {text: "Peking Opera", size: 37},
+        {text: "Electronic Tickets", size: 36},
+        {text: "Opera Channel", size: 35},
+        {text: "Support", size: 34},
+        {text: "Entertainment", size: 34},
+        {text: "Online Platforms", size: 33},
+        {text: "Social Media", size: 31},
+        {text: "Events", size: 31},
+        {text: "Youth", size: 29},
+        {text: "Roles", size: 28},
+        {text: "Modern", size: 24},
+        {text: "Audience Experience", size: 24},
+        {text: "Interaction", size: 23},
+        {text: "Performers", size: 22},
+        {text: "Innovation", size: 20},
+        {text: "Education", size: 19},
+        {text: "History", size: 19},
+        {text: "CCTV", size: 19},
+        {text: "Promotion", size: 18},
+        {text: "Performance Form", size: 17},
+        {text: "Digital Platforms", size: 16},
+        {text: "Audience", size: 16},
+        {text: "Peking Opera House", size: 16},
+        {text: "Audience Base", size: 16},
+        {text: "Comments", size: 15},
+        {text: "Videos", size: 15},
+        {text: "Live Streaming", size: 14},
+        {text: "Influence", size: 14},
+        {text: "Production", size: 14},
+        {text: "Internet", size: 13},
+        {text: "Art", size: 13},
+        {text: "Innovative Form", size: 12},
+        {text: "Appreciation", size: 11},
+        {text: "Content", size: 11},
+        {text: "Artists", size: 8},
+        {text: "Works", size: 8},
+        {text: "Communication", size: 8},
+    ];
+
+        var width = document.getElementById('wordCloud').clientWidth;
+    var height = document.getElementById('wordCloud').clientHeight;
+
+    var svg = d3.select("#wordCloud").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var layout = d3.layout.cloud()
+        .size([width, height])
+        .words(words.map(function(d) {
+            return {text: d.text, size: d.size};
+        }))
+        .padding(5)
+        .rotate(function() { return ~~(Math.random() * 2) * 90; })
+        .font("Impact")
+        .fontSize(function(d) { return d.size; })
+        .on("end", draw);
+
+    layout.start();
+
+    function draw(words) {
+        svg.append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+            .selectAll("text")
+            .data(words)
+            .enter().append("text")
+            .style("font-size", function(d) { return d.size + "px"; })
+            .style("font-family", "Impact")
+            .style("fill", function(d, i) { return d3.schemeCategory10[i % 10]; })
+            .attr("text-anchor", "middle")
+            .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+            })
+            .text(function(d) { return d.text; })
+            .on("mouseover", function(event, d) {
+                d3.select(this).style("fill", "orange");
+                d3.select("#analysisText").html("<strong>Keyword:</strong> " + d.text + "<br><strong>Frequency:</strong> " + d.size);
+            })
+            .on("mouseout", function(event, d) {
+                d3.select(this).style("fill", function(d, i) { return d3.schemeCategory10[i % 10]; });
+                d3.select("#analysisText").html("<strong>Keywords:</strong> Farewell My Concubine, Stage, Mei Lanfang, Government subsidy, Culture, Traditional Opera, Performance, Xun School, Live Streaming Time, Development, Digitization, Online Opera, Market, Inheritance, Peking Opera, Electronic Tickets, Opera Channel, Support, Entertainment, Online Platforms, Social Media, Events, Youth, Roles, Modern, Audience Experience, Interaction, Performers, Innovation, Education, History, CCTV, Promotion, Performance Form, Digital Platforms, Audience, Peking Opera House, Audience Base, Comments, Videos, Live Streaming, Influence, Production, Internet, Art, Innovative Form, Appreciation, Content, Artists, Works, Communication");
+            });
+    }
+</script>
+
+<div class="he2">   
+<p><strong>Analysis of the Digital Process of Peking Opera</strong></p>
+</div>
+<br><br>
+<div class="new-cards-container">
+    <div class="new-card">
+        <img src="SJ1.PNG" alt="Stage Effects 1">
+        <p>The policy determines the digital development of Peking Opera<br><br>After the promulgation of new policies in the field of culture in 2012 and 2018, the digital equipment of many theaters showed rapid growth</p>
+    </div>
+    <div class="new-card">
+        <img src="SJ2.png" alt="Stage Effects 5">
+        <p>The policy determines the digital development of Peking Opera<br><br>The policy has also promoted the digitization of Peking Opera resources, for example, the peak of the digitization process of Peking Opera scripts is the same as the peak of the growth of theater equipment</p>
+    </div>
+    <div class="new-card">
+        <img src="SJ3.png" alt="Stage Effects 6">
+        <p>The policy determines the digital development of Peking Opera<br><br>The same has happened with the digitization of Peking Opera records, with both databases developing rapidly after the promulgation of cultural policies in 2012 and 2018</p>
+    </div>
+    <div class="new-card">
+        <img src="SJ4.png" alt="Stage Effects 7">
+        <p>The external environment influences the digital development direction<br><br>In the wake of the COVID-19 outbreak, the external environment has promoted the digitalization of Peking Opera, forcing the industry to pay more attention to online communication</p>
+    </div>
+</div>
+<br><br>
+<div class="he7">   
+<p>The digitization process of Beijing Opera is closely related to the policy support. Since the early 2010s, the Chinese government has begun to promote the protection and development of traditional culture and art such as Peking Opera, and the emergence of the digital peak of Peking Opera is often accompanied by the introduction of major policies. For example, in the Outline of the National Cultural Reform and Development Plan (12th Five-Year Plan) released in 2012, the goal of strengthening the protection and development of traditional opera art was clearly put forward, and during this period, the speed of the digitalization of Peking Opera was significantly accelerated. The introduction of these support policies has greatly promoted the digital development of Peking Opera, which is not only reflected in the update of the digital equipment of the offline theater, but also reflected in the improvement of the Peking Opera database on the Internet. In addition, local governments have also introduced subsidy policies for the digitalization of Peking Opera, such as online ticket purchase subsidy policies launched by the governments of Beijing, Shanghai, Jiangsu, Guangzhou and Shenzhen. The support of these policies has provided a solid foundation and impetus for the digitalization of Peking Opera.</p>
+</div>
+<style>
+.he7{
+    width: 97%;
+    margin-left: 30px;
+    font-size: 1.4em;
+}
+</style>
+<br><br>
+<footer>
+    <p>&copy; 2024The Road to Digital Transformation of Peking Opera<br>All rights reserved. Copyright infringement reserved</p>
+
+  </footer>
 </body>
-
 </html>
-
