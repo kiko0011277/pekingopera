@@ -250,3 +250,247 @@
         });
     </script>
 </body>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>组织节点</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="chart" style="width: 100%; height: 600px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        var option = {
+            title: {
+                text: 'Overseas Performances of the Four Famous Peking Opera Actors',
+                subtext: '',
+                left: 'center',
+                top: 'top'
+            },
+            tooltip: {
+                trigger: 'item',
+                triggerOn: 'mousemove'
+            },
+            animation: false,
+            series: [{
+                type: 'sankey',
+                emphasis: {
+                    focus: 'adjacency'
+                },
+                nodeAlign: 'justify',
+                orient: 'horizontal',
+                data: [{
+                        name: 'America', itemStyle: { color: '#083359' }
+                    },
+                    {
+                        name: 'Germany', itemStyle: { color: '#BF930F' }
+                    },
+                    {
+                        name: 'Britain', itemStyle: { color: '#BF820F' }
+                    },
+                    {
+                        name: 'Russia', itemStyle: { color: '#D9C893' }
+                    },
+                    {
+                        name: 'Singapore', itemStyle: { color: '#A62F14' }
+                    },
+                    {
+                        name: 'France', itemStyle: { color: '#91c6fb' }
+                    },
+                    {
+                        name: 'Japan', itemStyle: { color: '#c42d69' }
+                    },
+                    {
+                        name: 'Hong Kong', itemStyle: { color: '#f56fec' }
+                    },
+                    {
+                        name: 'Mei Lanfang', itemStyle: { color: '#66CBDF' }
+                    },
+                    {
+                        name: 'Cheng Yanqiu', itemStyle: { color: '#f9906f' }
+                    },
+                    {
+                        name: 'Xun Huisheng', itemStyle: { color: '#16a951' }
+                    },
+                    {
+                        name: 'Shang Xiaoyun', itemStyle: { color: '#f2be45' }
+                    },
+                    {
+                        name: '1928', itemStyle: { color: '#DB073D' }
+                    },
+                    {
+                        name: '1930', itemStyle: { color: '#DBA507' }
+                    },
+                    {
+                        name: '1934', itemStyle: { color: '#8EC7D2' }
+                    },
+                    {
+                        name: '1935', itemStyle: { color: '#0D6986' }
+                    },
+                    {
+                        name: '1940', itemStyle: { color: '#07485B' }
+                    },
+                    {
+                        name: '1950', itemStyle: { color: '#cbf65e' }
+                    },
+                    {
+                        name: '1956', itemStyle: { color: '#01fe29' }
+                    },
+                ],
+                links: [{
+                        source: 'Mei Lanfang',
+                        target: '1930',
+                        value: 1
+                    },
+                    {
+                        source: '1930',
+                        target: 'America',
+                        value: 1
+                    },
+                    {
+                        source: 'Mei Lanfang',
+                        target: '1934',
+                        value: 1
+                    },
+                    {
+                        source: '1934',
+                        target: 'Singapore',
+                        value: 1
+                    },
+                    {
+                        source: 'Mei Lanfang',
+                        target: '1935',
+                        value: 4
+                    },
+                    {
+                        source: '1935',
+                        target: 'Britain',
+                        value: 1
+                    },
+                    {
+                        source: '1935',
+                        target: 'Russia',
+                        value: 1
+                    },
+                    {
+                        source: '1935',
+                        target: 'Germany',
+                        value: 1
+                    },
+                    {
+                        source: '1935',
+                        target: 'France',
+                        value: 1
+                    },
+                    {
+                        source: 'Cheng Yanqiu',
+                        target: '1928',
+                        value: 1
+                    },
+                    {
+                        source: '1928',
+                        target: 'Japan',
+                        value: 1
+                    },
+                    {
+                        source: 'Cheng Yanqiu',
+                        target: '1930',
+                        value: 1
+                    },
+                    {
+                        source: '1930',
+                        target: 'Singapore',
+                        value: 1
+                    },
+                    {
+                        source: 'Cheng Yanqiu',
+                        target: '1935',
+                        value: 1
+                    },
+                    {
+                        source: '1935',
+                        target: 'Russia',
+                        value: 1
+                    },
+                    {
+                        source: 'Xun Huisheng',
+                        target: '1950',
+                        value: 2
+                    },
+                    {
+                        source: '1950',
+                        target: 'Russia',
+                        value: 1
+                    },
+                                        {
+                        source: '1950',
+                        target: 'Singapore',
+                        value: 1
+                    },
+                    {
+                        source: 'Xun Huisheng',
+                        target: '1956',
+                        value: 1
+                    },
+                    {
+                        source: '1956',
+                        target: 'Japan',
+                        value: 1
+                    },
+                    {
+                        source: 'Shang Xiaoyun',
+                        target: '1935',
+                        value: 1
+                    },
+                    {
+                        source: '1935',
+                        target: 'Japan',
+                        value: 1
+                    },
+                    {
+                        source: 'Shang Xiaoyun',
+                        target: '1940',
+                        value: 1
+                    },
+                    {
+                        source: '1940',
+                        target: 'America',
+                        value: 1
+                    },
+                    {
+                        source: 'Shang Xiaoyun',
+                        target: '1950',
+                        value: 2
+                    },
+                    {
+                        source: '1950',
+                        target: 'Singapore',
+                        value: 1
+                    },
+                    {
+                        source: '1950',
+                        target: 'Hong Kong',
+                        value: 1
+                    },
+
+
+                ],
+                lineStyle: {
+                 color: 'source',
+                 width: 2,
+                 type: 'dashed',
+                 curveness: 0.5
+                 }
+            }]
+        };
+
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
