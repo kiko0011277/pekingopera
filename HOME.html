@@ -677,7 +677,7 @@
                 taskElement.innerHTML = `
                     <h3>${task.name}</h3>
                     <p><strong>Time:</strong> ${task.time}</p>
-                    <p class="participants"><strong>Participants:</strong> ${task.participants}</p>
+                   
                     <button onclick="deleteTask(${index})">Delete Task</button>
                 `;
                 taskList.appendChild(taskElement);
@@ -689,7 +689,7 @@
             const time = document.getElementById('taskTime').value;
 
             if (name && time && participants) {
-                predefinedTasks.push({ name, time, participants });
+                predefinedTasks.push({ name, time });
                 renderTasks();
                 document.getElementById('taskName').value = '';
                 document.getElementById('taskTime').value = '';
