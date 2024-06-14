@@ -687,13 +687,13 @@
         function addTask() {
             const name = document.getElementById('taskName').value;
             const time = document.getElementById('taskTime').value;
-            const participants = document.getElementById('taskParticipants').value;
+
             if (name && time && participants) {
                 predefinedTasks.push({ name, time, participants });
                 renderTasks();
                 document.getElementById('taskName').value = '';
                 document.getElementById('taskTime').value = '';
-                document.getElementById('taskParticipants').value = '';
+
             }
         }
 
